@@ -17,33 +17,33 @@ class SearchTests extends CoreTestCase {
     searchPage.waitForSearchResult("Object-oriented programming language");
   }
 
-//  @Test
-//  void cancelSearch() {
-//    SearchPageObject searchPage = SearchPageObjectFactory.get();
-//
-//    searchPage.initSearchInput();
-//    searchPage.waitForCancelButtonToAppear();
-//    searchPage.clickCancelSearch();
-//    searchPage.waitForCancelButtonToDisappear();
-//  }
-//
-//  @Test
-//  void amountOfNonEmptySearch() {
-//    SearchPageObject searchPage = SearchPageObjectFactory.get();
-//
-//    searchPage.initSearchInput();
-//    searchPage.typeSearchLine("Linkin Park Discography");
-//
-//    searchPage.getFoundArticles().shouldHave(sizeGreaterThan(0));
-//  }
-//
-//  @Test
-//  void amountOfEmptySearch() {
-//    SearchPageObject searchPage = SearchPageObjectFactory.get();
-//
-//    searchPage.initSearchInput();
-//    searchPage.typeSearchLine("xvhuishvius");
-//    searchPage.waitForEmptyResultsLabel();
-//    searchPage.assertThereIsNoResultOfSearch();
-//  }
+  @Test
+  void cancelSearch() {
+    SearchPageObject searchPage = SearchPageObjectFactory.get();
+
+    searchPage.initSearchInput();
+    searchPage.waitForCancelButtonToAppear();
+    searchPage.clickCancelSearch();
+    searchPage.waitForCancelButtonToDisappear();
+  }
+
+  @Test
+  void amountOfNonEmptySearch() {
+    SearchPageObject searchPage = SearchPageObjectFactory.get();
+
+    searchPage.initSearchInput();
+    searchPage.typeSearchLine("Linkin Park Discography");
+
+    searchPage.getFoundArticles().shouldHave(sizeGreaterThan(0));
+  }
+
+  @Test
+  void amountOfEmptySearch() {
+    SearchPageObject searchPage = SearchPageObjectFactory.get();
+
+    searchPage.initSearchInput();
+    searchPage.typeSearchLine("xvhuishvius");
+    searchPage.waitForEmptyResultsLabel();
+    searchPage.assertThereIsNoResultOfSearch();
+  }
 }
