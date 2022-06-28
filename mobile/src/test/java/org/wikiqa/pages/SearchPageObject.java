@@ -19,7 +19,7 @@ abstract public class SearchPageObject extends MainPageObject {
   @iOSXCUITFindBy(xpath = "//XCUIElementTypeSearchField[@name=\"Search Wikipedia\"]")
   private SelenideElement SEARCH_INIT_ELEMENT;
 
-  @AndroidFindBy(xpath = "//*[contains(@text, 'Search…')]")
+  @AndroidFindBy(id = "org.wikipedia:id/search_src_text")
   @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name='Wikipedia']/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeSearchField")
   private SelenideElement SEARCH_INPUT;
 

@@ -9,22 +9,22 @@ import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
 class GetStartedTest extends CoreTestCase {
 
-  @Test
-  void passThroughWelcome() {
-    assumeFalse(Platform.getInstance().isAndroid());
-
-    WelcomePageObject page = new WelcomePageObject();
-
-    page.waitForLearnMoreLink();
-    page.clickNextButton();
-
-    page.waitForNewWaysToExploreText();
-    page.clickNextButton();
-
-    page.waitForAddOrEditPreferredLangText();
-    page.clickNextButton();
-
-    page.waitForLearnMoreAboutDataCollectedText();
-    page.clickGetStartedButton();
-  }
+//  @Test
+//  void passThroughWelcome() {
+//    assumeFalse(Platform.getInstance().isAndroid());
+//
+//    WelcomePageObject page = new WelcomePageObject();
+//
+//    page.waitForLearnMoreLink();
+//    page.clickNextButton();
+//
+//    page.waitForNewWaysToExploreText();
+//    page.clickNextButton();
+//
+//    page.waitForAddOrEditPreferredLangText();
+//    page.clickNextButton();
+//
+//    page.waitForLearnMoreAboutDataCollectedText();
+//    page.clickGetStartedButton();
+//  }
 }
