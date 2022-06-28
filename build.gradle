@@ -1,0 +1,56 @@
+defaultTasks 'help'
+
+ext {
+  selenideVersion = '6.3.4'
+  junitVersion = '5.8.2'
+  slf4jVersion = '1.7.36'
+}
+
+subprojects {
+  apply plugin: 'java'
+  dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("com.codeborne:selenide:$selenideVersion")
+    testImplementation("org.slf4j:slf4j-api:$slf4jVersion")
+    testRuntimeOnly("org.slf4j:slf4j-simple:$slf4jVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+
+    testImplementation("com.automation-remarks:video-recorder-junit5:2.0") {
+      exclude group: 'org.awaitility'
+      exclude group: 'org.junit.jupiter'
+      exclude group: 'org.junit.platform'
+      exclude group: 'commons-io'
+    }
+  }
+
+  repositories {
+    mavenCentral()
+    maven {
+      url "https://oss.sonatype.org/content/repositories/snapshots"
+      mavenContent {
+        snapshotsOnly()
+      }
+    }
+  }
+}
+
+help {
+  doFirst {
+    println ""
+    println "************************************************************************ "
+    println "***                                                                  *** "
+    println "*** Welcome to https://github.com/wikipedia-qa/wikipedia-selenide!   *** "
+    println "***                                                                  *** "
+    println "*** Requirements for mobile tests:                                   *** "
+    println "*** - start appium server locally                                    *** "
+    println "*** - install XCode with iPhone Simulators                           *** "
+    println "***                                                                  *** "
+    println "*** You can run tests by one of the following commands:              *** "
+    println "*** ./gradlew android                                                *** "
+    println "*** ./gradlew ios                                                    *** "
+    println "*** ./gradlew web                                                    *** "
+    println "***                                                                  *** "
+    println "************************************************************************ "
+    println ""
+  }
+}
