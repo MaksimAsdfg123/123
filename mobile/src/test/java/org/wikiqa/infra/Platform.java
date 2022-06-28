@@ -6,6 +6,7 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -49,13 +50,14 @@ public class Platform {
 
   private DesiredCapabilities getAndroidDesiredCapabilities() {
     DesiredCapabilities capabilities = new DesiredCapabilities();
+    capabilities.setCapability("deviceName", "emulator-5554");
     capabilities.setCapability("platformName", "Android");
-    capabilities.setCapability("deviceName", "Android Emulator");
-    capabilities.setCapability("version", "4.4.2");
+    capabilities.setCapability("platformVersion", "10");
     capabilities.setCapability("automationName", "Appium");
     capabilities.setCapability("appPackage", "org.wikipedia");
     capabilities.setCapability("appActivity", ".main.MainActivity");
-    capabilities.setCapability("app", resourcePath("apks/org.wikipedia.apk"));
+    File file = new File("src/test/resources/", "apks/org.wikipedia.apk");
+    capabilities.setCapability("app", file.getAbsolutePath());
     capabilities.setCapability("newCommandTimeout", 11);
     return capabilities;
   }
