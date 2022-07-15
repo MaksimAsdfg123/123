@@ -1,5 +1,6 @@
 package org.wikiqa.tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.wikiqa.infra.CoreTestCase;
 import org.wikiqa.infra.Platform;
@@ -10,6 +11,7 @@ import static org.junit.jupiter.api.Assumptions.assumeFalse;
 class GetStartedTest extends CoreTestCase {
 
   @Test
+  @Disabled
   void passThroughWelcome() {
     assumeFalse(Platform.getInstance().isAndroid());
 
